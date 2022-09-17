@@ -34,7 +34,6 @@ export const Home = () => {
     fetch("https://mystake.com/api/game/getgametemplates_dev/1/1/1")
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
         setData(
           result.GameTemplateNameTranslations.map((el, key) => ({
             ...el,
@@ -111,7 +110,7 @@ export const Home = () => {
       {loading ? (
         <Loading />
       ) : (
-        <button className="more" disabled={loading} onClick={nextPage}>
+        <button className="more" onClick={nextPage}>
           see more
         </button>
       )}
